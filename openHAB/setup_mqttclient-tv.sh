@@ -36,6 +36,8 @@ mkdir /media/mqtt_setup
 cd /media
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient-tv/mqtt.remote_command.py
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient-tv/remote_services.conf
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient-tv/reboot_to_retropi.sh
+#wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient-tv/reboot_to_osmc.sh
 
 # Pull Service Files From GitHub to Local Device
 cd /etc/systemd/system
