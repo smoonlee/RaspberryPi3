@@ -5,7 +5,7 @@ echo "#                           #"
 echo "Running System Update"
 echo
 
-apt-get update -y & apt upgrade -y
+apt update -y & apt dist-upgrade -y
 
 echo
 apt install wiringpi -y
@@ -19,6 +19,13 @@ apt install curl -y
 echo
 apt install git -y
 
+echo 
+apt-get install build-essential python-dev python-openssl -y
+
+echo 
+apt install python-pip -y
+pip install paho-mqtt -y
+
 echo
 apt install mosquitto mosquitto-clients -y
 systemctl enable mosquitto
@@ -27,36 +34,27 @@ systemctl start mosquitto
 echo
 mkdir /media/mqtt_setup
 
-#GPOI Diag Tool - https://github.com/kgbplus/gpiotest
+# Pull Files from GitHub to Local Device
 cd /media/mqtt_setup
-wget https://raw.githubusercontent.com/kgbplus/gpiotest/master/gpiotest.py
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/media/mqtt_setup/gpiotest.py
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/media/mqtt_setup/mqtt.dhtsensor.py
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/media/mqtt_setup/mqtt.gpiocontrol.py
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/media/mqtt_setup/mqtt-launcher.py
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/media/mqtt_setup/launcher.conf
 
-# Configure Packages for Mqtt Led Controll
-apt install python-pip -y
-pip install paho-mqtt
-cd /media/mqtt_setup
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/OpenHAB/mqtt-client/mqtt.gpiocontrol.py
+# Pull Service Files From GitHub to Local Device
+cd /etc/systemd/system
+wget 
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.bedroom.dht22.service
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.bedroom.leds.service
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.bedroom.relay_1.service
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.bedroom.relay_2.service
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.bedroom.relay_3.service
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.bedroom.relay_4.service
 
-# Configure Packegs for Mqtt Dht22 Senser
-apt-get install build-essential python-dev python-openssl -y
-cd /media/mqtt_setup
-
-echo
-git clone https://github.com/adafruit/Adafruit_Python_DHT.git
-cd Adafruit_Python_DHT
-python setup.py install
-
-echo
-cd /media/mqtt_setup
-https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/OpenHAB/mqtt-client/mqtt.dht22sensor.py
-
-# Install Raspotify Connecter
+# Setup Raspotify Connector
 echo
 curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
-
-# Pull Example Setup Files from GitHub
-echo
-cd /media/mqtt_setup
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/OpenHAB/mqtt-client/openhab_led_example
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/OpenHAB/mqtt-client/openhab_dht22_example
-
+cd /etc/default 
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/default/raspotify
+service raspotify restart
