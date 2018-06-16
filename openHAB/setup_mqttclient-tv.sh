@@ -41,5 +41,5 @@ wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/open
 
 # Pull Service Files From GitHub to Local Device
 cd /etc/systemd/system
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.remote_command.service
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient-tv/etc/systemd/system/mqtt.remote_command.service
 systemctl enable mqtt.remote_command
