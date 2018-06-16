@@ -44,13 +44,14 @@ wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttcl
 
 # Pull Service Files From GitHub to Local Device
 cd /etc/systemd/system
-wget 
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.bedroom.dht22.service
-wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.bedroom.leds.service
-wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.bedroom.relay_1.service
-wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.bedroom.relay_2.service
-wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.bedroom.relay_3.service
-wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.bedroom.relay_4.service
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.remote_command.service
+systemctl enable 
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.dht22.service
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.leds.service
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_1.service
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_2.service
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_3.service
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_4.service
 
 # Setup Raspotify Connector
 echo
