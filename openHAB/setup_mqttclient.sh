@@ -5,7 +5,9 @@ echo "#                           #"
 echo "Running System Update"
 echo
 
+
 apt update -y & apt dist-upgrade -y
+apt update -y & apt upgrade -y
 
 echo
 apt install wiringpi -y
@@ -55,16 +57,24 @@ wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttcl
 # Pull Service Files From GitHub to Local Device
 cd /etc/systemd/system
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.remote_command.service
+systemctl enable mqtt.remote_command
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.dht22.service
-wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.leds.service
+systemctl enable mqtt.dht22
+wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.leds.service #maybe change to mqtt.lights
+systemctl enable mqtt.leds
 wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_1.service
+systemctl enable mqtt.relay_1
 wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_2.service
+systemctl enable mqtt.relay_2
 wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_3.service
+systemctl enable mqtt.relay_3
 wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_4.service
+systemctl enable mqtt.relay_4
 
 # Setup Raspotify Connector
 echo
 curl -sL https://dtcooper.github.io/raspotify/install.sh | sh
 cd /etc/default 
+rm raspotify
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/default/raspotify
 service raspotify restart
