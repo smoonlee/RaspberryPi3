@@ -1,0 +1,9 @@
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+ExecStart=/usr/bin/python /media/mqtt.bedroom.systemservices.py  &
+
+[Install]
+WantedBy=multi-user.target
+

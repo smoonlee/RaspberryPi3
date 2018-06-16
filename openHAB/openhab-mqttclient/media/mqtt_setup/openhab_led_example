@@ -1,0 +1,21 @@
+Create systemdm Service File
+sudo nano /etc/systemdm/system/mqtt.service.service
+
+# mqtt.led.control
+#https://community.openhab.org/t/controlling-a-raspberrypi-gpio-pin-with-mqtt/40912
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python /media/mqtt.bedroom.led.py &
+
+[Install]
+WantedBy=multi-user.target
+
+# openhab mqtt broker connection - mqtt.cfg [nano /openhab/conf/services/mqtt.cfg]
+demo-broker.url=tcp://172.16.42.19:1883 # MUST be IP of Device - Scripts on Device can be 127.0.0.1
+
+# openhab switch control - default.items [nano /openhab/conf/items/default.items]
+Switch MqttLed "Mqtt LED Control [%s]" <light> (GF_Living, Lights) {mqtt=">[demo-broker:bedroom/led1:command:*:default],<[demo-broker:bedroom/led1:state:default]"}
+
+# openhab sitemap control - default.sitemap [nano /openhab/conf/sitemaps/default.sitemap]
+Switch item=MqttLed 

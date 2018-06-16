@@ -1,0 +1,8 @@
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+ExecStart=/usr/bin/python /media/mqtt.bedroom.dht22.py 'bedroom/temperature' 'bedroom/humidity' 17
+
+[Install]
+WantedBy=multi-user.target

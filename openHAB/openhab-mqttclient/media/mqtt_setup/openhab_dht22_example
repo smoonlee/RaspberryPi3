@@ -1,0 +1,23 @@
+Create systemdm Service File
+sudo nano /etc/systemdm/system/mqtt.service.service
+
+# mqtt.dht22.sensor
+#https://community.openhab.org/t/reading-a-dht11-22-on-a-raspberry-and-send-the-results-by-mqtt/40582
+
+[Service]
+Type=simple
+ExecStart=/usr/bin/python ./media/mqtt.dhtsensor.py 'bedroom/temperature1' 'bedroom/humidity1' 17
+
+[Install]
+WantedBy=multi-user.target
+
+# openhab mqtt broker connection - mqtt.cfg [nano /openhab/conf/services/mqtt.cfg]
+demo-broker.url=tcp://172.16.42.19:1883 # MUST be IP of Device - Scripts on Device can be 127.0.0.1
+
+# openhab switch control - default.items [nano /openhab/conf/items/default.items] - note: bedroom/temperature1 is define in the pytohn script
+Number bedroom_temp "Room Temperature [%.1f °C]" <temperature> (GF_Corridor) {mqtt="<[demo-broker:bedroom/temperature1:state:default]"}
+Number bedroom_humidity "Room Humidity [%.0f %%]" <line> (GF_Corridor) {mqtt="<[demo-broker:bedroom/humidity1:state:default]"}
+
+# openhab sitemap control - default.sitemap [nano /openhab/conf/sitemaps/default.sitemap]
+Text item=bedroom_temp icon="temperature"
+Text item=bedroom_humidity icon="humidity"

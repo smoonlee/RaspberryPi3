@@ -1,0 +1,9 @@
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+ExecStart=/usr/bin/python  /media/mqtt.bedroom.relay_1.py & 
+ExecStartPost=/usr/bin/gpio write 2 1
+
+[Install]
+WantedBy=multi-user.target
