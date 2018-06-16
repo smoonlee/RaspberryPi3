@@ -5,12 +5,11 @@ import paho.mqtt.client as mqtt
 #add for output
 import RPi.GPIO as GPIO
 
-
 # Define Variables
 MQTT_HOST = "127.0.0.1"
 MQTT_PORT = 1883
 MQTT_KEEPALIVE_INTERVAL = 45
-MQTT_TOPIC = "bedroom/relay2"
+MQTT_TOPIC = "bedroom/led1"
 #
 LED1 = 22
 GPIO.setmode(GPIO.BCM)
@@ -25,14 +24,14 @@ try:
   # This function will be invoked every time,
   # a new message arrives for the subscribed topic 
   def on_message(mosq, obj, msg):
-     if (msg.payload=='OFF'):
+     if (msg.payload=='ON'):
            GPIO.output(LED1,True)
-           print 'Relay Off'
+           print 'GPIO ON'
            print "Topic: " + str(msg.topic)
            print "QoS: " + str(msg.qos)
-     if (msg.payload=='ON'):
+     if (msg.payload=='OFF'):
            GPIO.output(LED1,False)
-           print 'Relay On'
+           print 'GPIO OFF'
            print "Topic: " + str(msg.topic)
            print "QoS: " + str(msg.qos)
 

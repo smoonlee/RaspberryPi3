@@ -45,7 +45,6 @@ wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttcl
 # Pull Service Files From GitHub to Local Device
 cd /etc/systemd/system
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.remote_command.service
-systemctl enable 
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.dht22.service
 wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.leds.service
 wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_1.service

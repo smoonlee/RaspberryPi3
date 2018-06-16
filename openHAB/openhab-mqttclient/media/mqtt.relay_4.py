@@ -5,7 +5,6 @@ import paho.mqtt.client as mqtt
 #add for output
 import RPi.GPIO as GPIO
 
-
 # Define Variables
 MQTT_HOST = "127.0.0.1"
 MQTT_PORT = 1883

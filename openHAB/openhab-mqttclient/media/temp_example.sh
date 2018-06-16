@@ -1,6 +1,6 @@
 #!/bin/bash
 
-Temp=`python /media/mqtt_setup/Adafruit_Python_DHT/examples/simpletest.py | cut -c 6-7`
+Temp=`python /media/dht22_output.py | cut -c 6-7`
 
 if [ $Temp -lt 23 ]; then
 gpio write 2 0

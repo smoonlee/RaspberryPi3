@@ -5,14 +5,13 @@ import paho.mqtt.client as mqtt
 #add for output
 import RPi.GPIO as GPIO
 
-
 # Define Variables
 MQTT_HOST = "127.0.0.1"
 MQTT_PORT = 1883
 MQTT_KEEPALIVE_INTERVAL = 45
-MQTT_TOPIC = "bedroom/relay1"
+MQTT_TOPIC = "bedroom/relay2"
 #
-LED1 = 27
+LED1 = 22
 GPIO.setmode(GPIO.BCM)
 GPIO.setup(LED1, GPIO.OUT)
 try:

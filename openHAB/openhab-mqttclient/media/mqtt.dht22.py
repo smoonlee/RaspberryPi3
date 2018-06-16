@@ -31,7 +31,6 @@ import datetime
 import paho.mqtt.client as mqtt
 import Adafruit_DHT
 
-
 #==================================================================================================================================================
 #Usage
 #python mqtt.channel.py <temp topic> <humidity topic> <gpio pin> <optional update frequency>
