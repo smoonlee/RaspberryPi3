@@ -52,7 +52,7 @@ DHT_PIN  = sys.argv[3]
 if (len(sys.argv) < 2):
    raise  ValueError('Input arguments of mqtt channel temperature humidity not passed')
 
-MOSQUITTO_HOST = 'servername'
+MOSQUITTO_HOST = '127.0.0.1'
 MOSQUITTO_PORT = 1883
 MOSQUITTO_TEMP_MSG = str(sys.argv[1]) # Old channel name in here
 MOSQUITTO_HUMI_MSG = str(sys.argv[2]) # Old channel name now passed by argument
