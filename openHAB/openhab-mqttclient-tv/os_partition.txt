@@ -1,0 +1,8 @@
+
+# RetoPi
+/dev/mmcblk0p6       204800   321535   116736   57M  c W95 FAT32 (LBA)
+/dev/mmcblk0p7       327680  8036349  7708670  3.7G 83 Linux
+
+# OSMC
+/dev/mmcblk0p8      8036352  8200189   163838   80M  c W95 FAT32 (LBA)
+/dev/mmcblk0p9      8200192 15728639  7528448  3.6G 83 Linux
