@@ -26,7 +26,7 @@ apt-get install build-essential python-dev python-openssl -y
 
 echo 
 apt install python-pip -y
-pip install paho-mqtt -y
+pip install paho-mqtt
 
 echo
 apt install mosquitto mosquitto-clients -y
