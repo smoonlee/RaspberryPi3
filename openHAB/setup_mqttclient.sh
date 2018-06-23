@@ -66,15 +66,15 @@ wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/open
 systemctl enable mqtt.remote_command
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.dht22.service
 systemctl enable mqtt.dht22
-wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.leds.service #maybe change to mqtt.lights
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient//etc/systemd/system/mqtt.leds.service #maybe change to mqtt.lights
 systemctl enable mqtt.leds
-wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_1.service
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient//etc/systemd/system/mqtt.relay_1.service
 systemctl enable mqtt.relay_1
-wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_2.service
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient//etc/systemd/system/mqtt.relay_2.service
 systemctl enable mqtt.relay_2
-wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_3.service
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient//etc/systemd/system/mqtt.relay_3.service
 systemctl enable mqtt.relay_3
-wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_4.service
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient//etc/systemd/system/mqtt.relay_4.service
 systemctl enable mqtt.relay_4
 
 # Setup Raspotify Connector
