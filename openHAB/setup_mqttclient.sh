@@ -36,6 +36,11 @@ systemctl start mosquitto
 echo
 mkdir /media/mqtt_setup
 
+cd /media/mqtt_setup
+git clone https://github.com/adafruit/Adafruit_Python_DHT.git
+cd Adafruit_Python_DHT
+sudo python setup.py install
+
 # Pull Files from GitHub to Local Device
 cd /media
 wget https://github.com/smoonlee/RaspberryPi3/blob/master/openHAB/openhab-mqttclient/media/mqtt.remote_command.py
