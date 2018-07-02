@@ -2,7 +2,7 @@
 Type=simple
 Restart=always
 RestartSec=3
-ExecStart=/usr/bin/python  /media/mqtt.bedroom.relay_1.py & 
+ExecStart=/usr/bin/python  /mqtt_client/mqtt.relay0_1.py & 
 ExecStartPost=/usr/bin/gpio write 2 1
 
 [Install]
