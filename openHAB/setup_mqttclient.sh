@@ -47,10 +47,10 @@ wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/open
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/media/remote_services.conf
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/media/dht22_output.py
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/media/mqtt.dht22.py
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/media/mqtt.relay_1.py
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/media/mqtt.relay_2.py
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/media/mqtt.relay_3.py
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/media/mqtt.relay_4.py
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/media/mqtt.relay0_1.py
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/media/mqtt.relay0_2.py
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/media/mqtt.relay0_3.py
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/media/mqtt.relay0_4.py
 
 # Pull Files from GitHub to Local Device
 cd /media/mqtt_setup
