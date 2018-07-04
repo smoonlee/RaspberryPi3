@@ -28,15 +28,15 @@ systemctl startmqtt.dht22
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.leds.service #maybe change to mqtt.lights
 systemctl enable mqtt.leds
 systemctl start mqtt.leds
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_1.service
-systemctl enable mqtt.relay_1
-systemctl start mqtt.relay_1
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_2.service
-systemctl enable mqtt.relay_2
-systemctl start mqtt.relay_2
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_3.service
-systemctl enable mqtt.relay_3
-systemctl start mqtt.relay_3
-wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay_4.service
-systemctl enable mqtt.relay_4
-systemctl start mqtt.relay_4
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay0_1.service
+systemctl enable mqtt.relay0_1
+systemctl start mqtt.relay0_1
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay0_2.service
+systemctl enable mqtt.relay0_2
+systemctl start mqtt.relay0_2
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay0_3.service
+systemctl enable mqtt.relay0_3
+systemctl start mqtt.relay0_3
+wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.relay0_4.service
+systemctl enable mqtt.relay0_4
+systemctl start mqtt.relay0_4
