@@ -23,7 +23,7 @@ apt install git -y
 
 echo 
 apt-get install build-essential python-dev python-openssl -y
-apt-get install rpi.gpio
+pip install rpi.gpio
 
 echo 
 apt install python-pip -y
@@ -60,3 +60,7 @@ cd /etc/default
 rm raspotify
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/default/raspotify
 service raspotify restart
+
+# install alsa mixer controls if missing [OSMC]
+echo
+apt-get install alsa-utils
