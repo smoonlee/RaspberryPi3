@@ -24,7 +24,7 @@ systemctl enable mqtt.remote_command
 systemctl start mqtt.remote_command
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.dht22.service
 systemctl enable mqtt.dht22
-systemctl startmqtt.dht22
+systemctl start mqtt.dht22
 wget https://raw.githubusercontent.com/smoonlee/RaspberryPi3/master/openHAB/openhab-mqttclient/etc/systemd/system/mqtt.leds.service #maybe change to mqtt.lights
 systemctl enable mqtt.leds
 systemctl start mqtt.leds
