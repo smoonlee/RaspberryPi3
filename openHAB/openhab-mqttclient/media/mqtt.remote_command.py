@@ -40,7 +40,7 @@ import socket
 import string
 
 qos=2
-CONFIG=os.getenv('MQTTLAUNCHERCONFIG', '/media/remote_command.conf')
+CONFIG=os.getenv('MQTTLAUNCHERCONFIG', '/mqtt_client/remote_command.conf')
 
 class Config(object):
     def __init__(self, filename=CONFIG):
