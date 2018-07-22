@@ -1,0 +1,10 @@
+[Service]
+Type=simple
+Restart=always
+RestartSec=3
+ExecStartPre=/usr/local/bin/gpio mode 4 out
+ExecStart=/usr/bin/python  /mqtt_client/mqtt.relay0_3.py &
+ExecStartPost=/usr/local/bin/gpio write 4 1
+
+[Install]
+WantedBy=multi-user.target
