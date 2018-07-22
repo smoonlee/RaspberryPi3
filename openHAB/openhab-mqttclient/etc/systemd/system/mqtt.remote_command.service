@@ -3,7 +3,7 @@
 Type=simple
 Restart=always
 RestartSec=3
-ExecStart=/usr/bin/python /mqtt_client/mqtt.bedroom.remote_command.py  &
+ExecStart=/usr/bin/python /mqtt_client/mqtt.remote_command.py  &
 
 [Install]
 WantedBy=multi-user.target
