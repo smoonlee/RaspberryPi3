@@ -9,34 +9,34 @@ import RPi.GPIO as GPIO
 MQTT_HOST = "127.0.0.1"
 MQTT_PORT = 1883
 MQTT_KEEPALIVE_INTERVAL = 45
-MQTT_TOPIC = "bedroom/relay3"
+MQTT_TOPIC = "Relay0/R3"
 #
-LED1 = 23
+GPIOPin = 27
 GPIO.setmode(GPIO.BCM)
-GPIO.setup(LED1, GPIO.OUT)
+GPIO.setup(GPIOPin, GPIO.OUT)
 try:
   # Define on connect event function
   # We shall subscribe to our Topic in this function
   def on_connect(self,mosq, obj, rc):
      mqttc.subscribe(MQTT_TOPIC, 0)
      print("Connect on "+MQTT_HOST)
-  # Define on_message event function. 
+  # Define on_message event function.
   # This function will be invoked every time,
-  # a new message arrives for the subscribed topic 
+  # a new message arrives for the subscribed topic
   def on_message(mosq, obj, msg):
      if (msg.payload=='OFF'):
-           GPIO.output(LED1,True)
+           GPIO.output(GPIOPin,True)
            print 'Relay Off'
            print "Topic: " + str(msg.topic)
            print "QoS: " + str(msg.qos)
      if (msg.payload=='ON'):
-           GPIO.output(LED1,False)
+           GPIO.output(GPIOPin,False)
            print 'Relay On'
            print "Topic: " + str(msg.topic)
            print "QoS: " + str(msg.qos)
 
   def on_subscribe(mosq, obj, mid, granted_qos):
-          print("Subscribed to Topic: " + 
+          print("Subscribed to Topic: " +
           MQTT_TOPIC + " with QoS: " + str(granted_qos))
 
     # Initiate MQTT Client
@@ -53,9 +53,9 @@ try:
     # Continue monitoring the incoming messages for subscribed topic
   mqttc.loop_forever()
 
-except KeyboardInterrupt:  
-    # here you put any code you want to run before the program   
+except KeyboardInterrupt:
+    # here you put any code you want to run before the program
     # exits when you press CTRL+C
-    GPIO.cleanup()  
-#finally:  
-    #GPIO.cleanup() # this ensures a clean exit  
+    GPIO.cleanup()
+#finally:
+    #GPIO.cleanup() # this ensures a clean exit
