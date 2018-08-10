@@ -28,6 +28,7 @@ pip install rpi.gpio
 echo 
 apt install python-pip -y
 pip install paho-mqtt
+pip install requests 
 
 echo
 apt install mosquitto mosquitto-clients -y
