@@ -2,7 +2,7 @@
 Type=simple
 Restart=always
 RestartSec=3
-ExecStart=/usr/bin/python /media/mqtt.bedroom.dht22.py 'bedroom/temperature' 'bedroom/humidity' 17
+ExecStart=/usr/bin/python /etc/mosquitto/scripts/mqtt.dhtsensor.py 'room/temperature' 'room/humidity' 4
 
 [Install]
 WantedBy=multi-user.target
